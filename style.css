@@ -1,0 +1,56 @@
+/* Стиль для контейнера страницы */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    user-select: none;
+}
+
+/* Панель с цветами */
+.color-panel {
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: column; /* Содержимое панели расположено по вертикали */
+    align-items: center; /* Центрируем клетки по горизонтали */
+    padding: 10px 0;
+    width: 2.5vw;
+    height: 20vw;
+}
+
+/* Стиль для каждой цветной клетки */
+.color-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+.field {
+    width: 60vw;
+    height: 30vw;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: .5px;
+}
+.cell {
+    background: rgb(62, 62, 62);
+}
+
+.cell:hover {
+    background: rgb(62, 62, 62);
+    opacity: .5;
+}

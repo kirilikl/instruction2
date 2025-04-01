@@ -19,8 +19,8 @@ body {
     height: 20vw;
 }
 
-/* Стиль для каждой цветной клетки */
-.color-box {
+/* Стиль для кнопок */
+.color-box, .erase, .fill {
     width: 100%;
     aspect-ratio: 1/1;
     border: 1px solid #ccc;

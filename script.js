@@ -1,6 +1,7 @@
 let IS_CLICKED = false
 let COLOR = "rgb(83, 15, 255)";
 let field = document.querySelector(".field")
+let boxes = document.querySelectorAll('.color-box')
 
 for (let i = 0; i < 450; i += 1) {
 	let cell = document.createElement("div")
@@ -17,7 +18,7 @@ document.addEventListener("mouseup", function () {
 	IS_CLICKED = false
 })
 
-
+//Рисование при нажатии или зажатии мыши
 let cells = document.querySelectorAll(".cell")
 cells.forEach((cell) => {
 	cell.addEventListener("mouseover", function () {
@@ -30,8 +31,36 @@ cells.forEach((cell) => {
 			})
 		}
 	})
+    cell.addEventListener("mousedown", function () {
+        anime({
+			targets: cell,
+			background: COLOR,
+			duration: 200,
+			easing: "linear",
+		})
+    })
+})
+///Выбор цвета
+for(let i = 0; i < 3; i++){
+        boxes[i].addEventListener("mousedown", function(){
+            COLOR = boxes[i].style.background
+        })
+}
+
+///Закрасить всё выбранным цветом
+document.querySelector('.fill').addEventListener("click", function () {
+	cells.forEach((cell)=>{
+        anime({
+				targets: cell,
+				background: COLOR,
+				duration: 200,
+				easing: "linear",
+		})
+    })
 })
 
+    
+///Стереть всё
 document.querySelector('.erase').addEventListener("click", function () {
 	cells.forEach((cell)=>{
         anime({
